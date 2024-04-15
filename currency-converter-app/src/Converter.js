@@ -3,7 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchExchangeRates } from './slices/exchangeRatesSlice';
 import './Converter.css';
 
-function Converter() {
+
+
+export function Converter() {
   const dispatch = useDispatch();
   const rates = useSelector((state) => state.exchangeRates.rates);
   const [amount, setAmount] = useState('');
@@ -75,4 +77,8 @@ function Converter() {
   );
 }
 
-export default Converter;
+
+export const pageTitle = "Currency Converter";
+ 
+
+
