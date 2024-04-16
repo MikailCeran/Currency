@@ -1,24 +1,26 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { store } from './store';
-import { Converter, pageTitle as ConverterTitle } from './Converter';
-import { About, pageTitle as AboutTitle } from './About';
-import { LiveExchanges, pageTitle as LiveExchangesTitle } from './LiveExchanges';
-import { Contact, pageTitle as contact } from './Contact';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Import af router-komponenter fra react-router-dom
+import { Provider } from 'react-redux'; // Import af Provider fra react-redux
+import { store } from './store'; // Import af Redux store
+import { Converter, pageTitle as ConverterTitle } from './Converter'; // Import af Converter komponenten og sidetitlen
+import { About, pageTitle as AboutTitle } from './About'; // Import af About komponenten og sidetitlen
+import { LiveExchanges, pageTitle as LiveExchangesTitle } from './LiveExchanges'; // Import af LiveExchanges komponenten og sidetitlen
+import { Contact, pageTitle as contact } from './Contact'; // Import af Contact komponenten og sidetitlen
+import './App.css'; // Import af CSS-styling
 
-//Der gjort brug af Routes ved brug af ract-router-dom
-function App() { 
+// Hovedkomponent for hele applikationen
+function App() {
   return (
-    <Provider store={store}>
-      <Router>
+    <Provider store={store}> {/* Wrapper for at give Redux store adgang til komponenterne */}
+      <Router> {/* Router komponent til navigation */}
         <div className="app-container">
+          {/* Header med titel og navigation */}
           <header className="app-header">
             <h1>Currency Converter</h1>
             <nav className='navbar'>
               <ul>
-                <li> 
+                {/* Links til forskellige sider */}
+                <li>
                   <Link to="/">Converter</Link>
                 </li>
                 <li>
@@ -28,22 +30,24 @@ function App() {
                   <Link to="/liveexchanges">LiveExchanges</Link>
                 </li>
                 <li>
-                <Link to="/contact">Contact</Link>
+                  <Link to="/contact">Contact</Link>
                 </li>
               </ul>
             </nav>
           </header>
 
+          {/* Main indhold med routing */}
           <main className="app-main">
             <Routes>
+              {/* Routes for forskellige sider */}
               <Route path="/" element={<Converter />} />
               <Route path="/about" element={<About />} />
               <Route path="/liveexchanges" element={<LiveExchanges />} />
               <Route path="/contact" element={<Contact />} />
-
             </Routes>
           </main>
 
+          {/* Footer med kontaktoplysninger og copyright */}
           <footer className="app-footer">
             <div className="footer-content">
               <p>

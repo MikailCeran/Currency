@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import './Contact.css';
-import './Converter.css'
+import './Contact.css'; // Import af CSS-styling for kontaktformularen
+import './Converter.css'; // Import af yderligere CSS-styling
 
+// Komponent for kontaktformular
 export function Contact() {
+  // State til at holde formdata
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -10,6 +12,7 @@ export function Contact() {
     message: ''
   });
 
+  // Funktion til at opdatere formdata ved ændringer i inputfelterne
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -18,16 +21,19 @@ export function Contact() {
     });
   };
 
+  // Funktion til at håndtere form-submit
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here, e.g., send data to server
+    // Her kan du håndtere formdata, f.eks. sende til server eller logge
     console.log(formData);
   };
 
+  // Render komponenten med kontaktformularen
   return (
     <div className="contact-container">
       <h1>Contact Us</h1>
       <form onSubmit={handleSubmit}>
+        {/* Inputfelt for navn */}
         <div className="form-group">
           <label htmlFor="name">Name:</label>
           <input
@@ -39,6 +45,7 @@ export function Contact() {
             required
           />
         </div>
+        {/* Inputfelt for e-mail */}
         <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input
@@ -50,6 +57,7 @@ export function Contact() {
             required
           />
         </div>
+        {/* Inputfelt for emne */}
         <div className="form-group">
           <label htmlFor="subject">Subject:</label>
           <input
@@ -61,6 +69,7 @@ export function Contact() {
             required
           />
         </div>
+        {/* Tekstareal for besked */}
         <div className="form-group">
           <label htmlFor="message">Message:</label>
           <textarea
@@ -71,10 +80,12 @@ export function Contact() {
             required
           ></textarea>
         </div>
+        {/* Submit-knap */}
         <button type="submit">Submit</button>
       </form>
     </div>
   );
 }
 
+// Eksporterer sidetitel
 export const pageTitle = "Contact";
