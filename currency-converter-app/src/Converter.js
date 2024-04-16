@@ -38,7 +38,14 @@ export function Converter() {
           <input
             type="number"
             value={amount}
-            onChange={(e) => setAmount(e.target.value)}
+            onChange={(e) => {
+              const inputValue = e.target.value;
+              if (parseFloat(inputValue) <= 0) {
+                alert('Please enter a valid amount greater than zero.');
+                return;
+              }
+              setAmount(inputValue);
+            }}
             placeholder="Enter amount"
             required
             className="input-field"
@@ -71,39 +78,9 @@ export function Converter() {
         )}
       </form>
       {result && <p className="result">{result.toFixed(2)} {toCurrency}</p>}
-      
-      {/* Contact Form */}
-      <div className="contact-form-container">
-        <h2>Contact Us</h2>
-        <form className="contact-form">
-          <div className="input-group">
-            <input
-              type="text"
-              placeholder="Name"
-              required
-              className="input-field"
-            />
-          </div>
-          <div className="input-group">
-            <input
-              type="email"
-              placeholder="Email"
-              required
-              className="input-field"
-            />
-          </div>
-          <div className="input-group">
-            <textarea
-              placeholder="Message"
-              required
-              className="input-field"
-            ></textarea>
-          </div>
-          <button type="submit" className="submit-button">Submit</button>
-        </form>
-      </div>
     </div>
   );
+  
 }
 
 export const pageTitle = "Currency Converter";

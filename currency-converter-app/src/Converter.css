@@ -1,10 +1,13 @@
+/* Existing Styles */
+
 .converter-container {
-  max-width: 400px;
+  max-width: 600px;
   margin: 50px auto;
-  padding: 20px;
+  padding: 30px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #f4f4f4;
 }
 
 .converter-form {
@@ -14,27 +17,29 @@
 }
 
 .input-group {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .input-field {
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  padding: 14px;
+  margin-bottom: 20px;
+  border-radius: 6px;
   border: 1px solid #ccc;
+  width: 100%;
 }
 
 .dropdown-group {
   display: flex;
-  gap: 10px;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
 .currency-dropdown {
-  padding: 10px 20px;
+  padding: 14px 28px;
   background-color: #007bff;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
@@ -46,33 +51,33 @@
 }
 
 .convert-button {
-  padding: 10px 20px;
+  padding: 14px 28px;
   background-color: #007bff;
   color: #fff;
   border: none;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  margin-bottom: 20px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .convert-button:hover {
   background-color: #0056b3;
-  
 }
 
 .result {
-  margin-top: 20px;
-  font-size: 18px;
+  margin-top: 30px;
+  font-size: 20px;
   color: #007bff;
 }
+
 .contact-form-container {
-  max-width: 400px;
+  max-width: 600px;
   margin: 50px auto;
-  padding: 20px;
+  padding: 30px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #f4f4f4;
   text-align: center;
 }

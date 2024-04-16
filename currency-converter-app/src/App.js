@@ -5,9 +5,11 @@ import { store } from './store';
 import { Converter, pageTitle as ConverterTitle } from './Converter';
 import { About, pageTitle as AboutTitle } from './About';
 import { LiveExchanges, pageTitle as LiveExchangesTitle } from './LiveExchanges';
+import { Contact, pageTitle as contact } from './Contact';
 import './App.css';
 
-function App() {
+//Der gjort brug af Routes ved brug af ract-router-dom
+function App() { 
   return (
     <Provider store={store}>
       <Router>
@@ -16,7 +18,7 @@ function App() {
             <h1>Currency Converter</h1>
             <nav className='navbar'>
               <ul>
-                <li>
+                <li> 
                   <Link to="/">Converter</Link>
                 </li>
                 <li>
@@ -24,6 +26,9 @@ function App() {
                 </li>
                 <li>
                   <Link to="/liveexchanges">LiveExchanges</Link>
+                </li>
+                <li>
+                <Link to="/contact">Contact</Link>
                 </li>
               </ul>
             </nav>
@@ -34,15 +39,16 @@ function App() {
               <Route path="/" element={<Converter />} />
               <Route path="/about" element={<About />} />
               <Route path="/liveexchanges" element={<LiveExchanges />} />
+              <Route path="/contact" element={<Contact />} />
+
             </Routes>
           </main>
 
           <footer className="app-footer">
             <div className="footer-content">
-              <h2>Contact Us</h2>
               <p>
                 For any inquiries or feedback, feel free to reach out to us at{' '}
-                <a href="mailto:info@example.com">info@example.com</a>
+                <a href="mailto:info@example.com">mika2055@edu.zealand.dk</a>
               </p>
               <p>&copy; 2024 Currency Converter App. All rights reserved.</p>
             </div>
