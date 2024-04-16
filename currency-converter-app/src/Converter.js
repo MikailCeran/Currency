@@ -3,8 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchExchangeRates } from './slices/exchangeRatesSlice';
 import './Converter.css';
 
-
-
 export function Converter() {
   const dispatch = useDispatch();
   const rates = useSelector((state) => state.exchangeRates.rates);
@@ -73,12 +71,39 @@ export function Converter() {
         )}
       </form>
       {result && <p className="result">{result.toFixed(2)} {toCurrency}</p>}
+      
+      {/* Contact Form */}
+      <div className="contact-form-container">
+        <h2>Contact Us</h2>
+        <form className="contact-form">
+          <div className="input-group">
+            <input
+              type="text"
+              placeholder="Name"
+              required
+              className="input-field"
+            />
+          </div>
+          <div className="input-group">
+            <input
+              type="email"
+              placeholder="Email"
+              required
+              className="input-field"
+            />
+          </div>
+          <div className="input-group">
+            <textarea
+              placeholder="Message"
+              required
+              className="input-field"
+            ></textarea>
+          </div>
+          <button type="submit" className="submit-button">Submit</button>
+        </form>
+      </div>
     </div>
   );
 }
 
-
 export const pageTitle = "Currency Converter";
- 
-
-

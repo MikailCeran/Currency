@@ -34,3 +34,12 @@ const exchangeRatesSlice = createSlice({
 });
 
 export default exchangeRatesSlice.reducer;
+
+
+/* export const createTest =  (result){ /* Afprøvelse af multiple exports 
+  let a = 1;
+  let b = 2
+  a+b == result;
+  return result;
+}
+/** */
